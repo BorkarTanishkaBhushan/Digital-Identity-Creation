@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title> MyDigity | Dashboard</title>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> 
+  <link href="{{ url_for('static', filename='css/dashboard.css')}}" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+    <aside id="sidenav-open" class="h-screen">
+        <nav class="flex flex-col justify-between h-full p-5 border-r bg-gray-50">
+          <div>
+            <a href="{{url_for('dashboard')}}" class="flex items-center p-3 rounded hover:bg-gray-200 bg-gray-500 text-white">    <!--active-->           
+                <span class="text-gray-900">Dashboard</span>
+              </a>
+      
+            <a href="{{url_for('yourdocs')}}" class="flex items-center p-3 rounded hover:bg-gray-200">
+              <span class="text-gray-900">Your Docs</span>
+            </a>
+    
+
+            <a href="{{url_for('profile')}}" class="flex items-center p-3 rounded hover:bg-gray-200">
+                <span class="text-gray-900">Profile</span>
+            </a>
+
+            <a href="{{url_for('temp')}}" class="flex items-center p-3 rounded hover:bg-gray-200">
+              <span class="text-gray-900">Temp</span>
+          </a>
+
+          <a href="{{url_for('ocrdocupload')}}" class="flex items-center p-3 rounded hover:bg-gray-200">
+            <span class="text-gray-900">OCR</span>
+        </a>
+          </div>
+        </nav>
+
+        <a href="#" id="sidenav-close" title="Close Menu" aria-label="Close Menu"></a>
+      </aside>   
+      <main class="overflow-y-scroll h-screen">
+        <!-- Header -->
+        <header class="flex items-center justify-between p-4 sticky top-0 bg-white">
+          <div class="flex items-center justify-between">
+            <a
+              href="#sidenav-open"
+              class="visible sm:hidden"
+              title="Open Menu"
+              aria-label="Open Menu"
+            >
+            </a>
+            <h1 class="mx-2 text-xl font-bold text-gray-900">Dashboard</h1>
+          </div>
+        </header>
+          
+
+        <div class="flex justify-center">
+          <div class="w-full max-w-md">
+            <div class="max-w-md mx-auto bg-white shadow-md rounded-md overflow-hidden">
+              <div class="px-4 py-5 bg-gray-100 border-b border-gray-200">
+                <h2 class="text-lg font-medium text-gray-800">Upload ID Card</h2>
+              </div>
+              <form class="px-4 py-5" action="/resultF" method="POST" enctype="multipart/form-data">
+                <div class="mb-4">
+                  <label class="block text-gray-700 font-bold mb-2" for="id_card">
+                    Select ID Card
+                  </label>
+                  <div class="relative">
+                    <input type="file" id="file" name="file" class="hidden" onchange="previewImage(event)">
+                    <div class="bg-gray-100 h-40 flex justify-center items-center rounded-md overflow-hidden">
+                      <img id="id_card_preview" src="" alt="" class="h-full">
+                    </div>
+                    <label for="file" class="absolute bottom-0 right-0 mr-4 mb-4 px-3 py-1 bg-blue-500 text-white text-sm rounded-md cursor-pointer hover:bg-blue-600">
+                      Choose File
+                    </label>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <label class="block text-gray-700 font-bold mb-2" for="file">
+                    Select ID Card Type
+                  </label>
+                  <select id="file" name="file" class="block w-full px-4 py-2 pr-8 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
+                    <option value="pan_card">PAN Card</option>
+                    <option value="aadhaar_card">Aadhaar Card</option>
+                  </select>
+                </div>
+                <div class="mt-6">
+                  <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out">
+                  Upload</button>
+                </div>
+              </form>
+            </div>
+            </div>
+            
+            
+            
+<!--
+        <div class="row">
+          <h2>Select a file to upload</h2>
+          <p>
+              {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                  <ul>
+                  {% for message in messages %}
+                    <li>{{ message }}</li>
+                  {% endfor %}
+                  </ul>
+                {% endif %}
+              {% endwith %}
+          </p>
+          {% if filename %}
+              <div>
+                  <img src="{{ url_for('display_image', filename=filename) }}">
+              </div>
+          {% endif %}
+          <form method="post" action="/" enctype="multipart/form-data">
+              <dl>
+                  <p>
+                      <input type="file" name="file" class="form-control" autocomplete="off" required>
+                  </p>
+              </dl>
+              <p>
+                  <input type="submit" value="Submit" class="btn btn-info">
+              </p>
+          </form>
+      </div>
+            -->
+            
+                </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    
+        <div class="w-full lg:w-1/2">
+    
+      </section>
+    </main>
+    
+
+
+
+
+
+    <!--
+    <body class="bg-gray-100">
+        <div class="flex justify-center pt-10">
+            <div class="w-full max-w-md">
+                <form class="bg-white shadow-lg rounded px-8 pt-6 pb-8 mb-4">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="document">
+                            Upload Document
+                        </label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="document" type="file">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="webcam">
+                            Open Webcam
+                        </label>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                            Open
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                            Upload
+                        </button>
+                        <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+                            View All Documents
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+-->
+<script src="{{ url_for('static', filename='script/dashboard.js')}}" type="text/javascript"></script>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

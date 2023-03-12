@@ -1,0 +1,86 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title> MyDigity | OCR Input</title>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> 
+  <link href="{{ url_for('static', filename='css/dashboard.css')}}" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+    
+    
+    <aside id="sidenav-open" class="h-screen">
+        <nav class="flex flex-col justify-between h-full p-5 border-r bg-gray-50">
+          <div>
+            <a href="{{url_for('dashboard')}}" class="flex items-center p-3 rounded hover:bg-gray-200">              
+                <span class="text-gray-900">Dashboard</span>
+              </a>
+      
+            <a href="{{url_for('yourdocs')}}" class="flex items-center p-3 rounded hover:bg-gray-200 "> <!--active--> 
+              <span class="text-gray-900">Your Docs</span>
+            </a>
+
+            <a href="{{url_for('profile')}}" class="flex items-center p-3 rounded hover:bg-gray-200">
+                <span class="text-gray-900">Profile</span>
+            </a>
+
+            <a href="{{url_for('ocrdocupload')}}" class="flex items-center p-3 rounded hover:bg-gray-200 bg-gray-500 text-white">
+              <span class="text-gray-900">OCR</span>
+          </a>
+          </div>
+        </nav>
+
+        <a href="#" id="sidenav-close" title="Close Menu" aria-label="Close Menu"></a>
+      </aside> 
+
+      <body class="bg-gray-200">
+        <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+          <div class="px-4 py-6 sm:px-0">
+            <h1 class="text-3xl font-bold mb-4">Upload Image</h1>
+            <form action="/upload1" method="POST" enctype="multipart/form-data">
+              <div class="mb-4">
+                <label for="image" class="block text-gray-700 font-bold mb-2">Choose an image:</label>
+                <input type="file" name="image" id="image" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+              </div>
+              <div class="flex items-center justify-between">
+                <input type="submit" value="Upload" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+              </div>
+            </form>
+          </div>
+        </div>
+      </body>
+
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

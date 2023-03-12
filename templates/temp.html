@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MyDigity | Face recognition</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="w-full max-w-md">
+            <div class="text-center mb-8">
+                <h1 class="text-2xl font-bold text-gray-700">Home Page</h1>
+            </div>
+            <div class="bg-white shadow-md rounded-md px-8 py-6 mb-8">
+                <div class="flex flex-col items-center">
+                    <img src="homepagepic.png" alt="Homepage Pic" class="mb-6">
+                    <button class="bg-gray-700 text-white py-2 px-4 rounded-md mb-2" onclick="addUser()">Add a User</button>
+                    <button class="bg-gray-700 text-white py-2 px-4 rounded-md mb-2" onclick="checkUser()">Check a User</button>
+                    <button class="bg-white text-gray-700 py-2 px-4 rounded-md" onclick="quit()">Quit</button>
+                </div>
+            </div>
+            <div class="bg-white shadow-md rounded-md px-8 py-6 hidden" id="add-user">
+                <div class="text-center mb-8">
+                    <h1 class="text-2xl font-bold text-gray-700">Enter the name</h1>
+                </div>
+                <div class="flex flex-col items-center">
+                    <input type="text" id="user-name" placeholder="Enter the name" class="border border-gray-400 rounded-md px-3 py-2 mb-6">
+                    <button class="bg-gray-700 text-white py-2 px-4 rounded-md mb-2" onclick="cancelAdd()">Cancel</button>
+                    <button class="bg-gray-700 text-white py-2 px-4 rounded-md mb-2" onclick="nextAdd()">Next</button>
+                </div>
+            </div>
+            <div class="bg-white shadow-md rounded-md px-8 py-6 hidden" id="check-user">
+                <div class="text-center mb-8">
+                    <h1 class="text-2xl font-bold text-gray-700">Enter the name</h1>
+                </div>
+                <div class="flex flex-col items-center">
+                    <select id="user-select" class="border border-gray-400 rounded-md px-3 py-2 mb-6">
+                        <option value="">Select a User</option>
+                    </select>
+                    <button class="bg-gray-700 text-white py-2 px-4 rounded-md mb-2" onclick="cancelCheck()">Cancel</button>
+                    <button class="bg-gray-700 text-white py-2 px-4 rounded-md mb-2" onclick="nextCheck()">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

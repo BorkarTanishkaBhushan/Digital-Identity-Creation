@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title> MyDigity | Dashboard</title>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> 
+  <link href="{{ url_for('static', filename='css/dashboard.css')}}" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+    
+    
+    <aside id="sidenav-open" class="h-screen">
+        <nav class="flex flex-col justify-between h-full p-5 border-r bg-gray-50">
+          <div>
+            <a href="{{url_for('dashboard')}}" class="flex items-center p-3 rounded hover:bg-gray-200">              
+                <span class="text-gray-900">Dashboard</span>
+              </a>
+      
+            <a href="{{url_for('yourdocs')}}" class="flex items-center p-3 rounded hover:bg-gray-200 bg-gray-500 text-white"> <!--active--> 
+              <span class="text-gray-900">Your Docs</span>
+            </a>
+
+            <a href="{{url_for('profile')}}" class="flex items-center p-3 rounded hover:bg-gray-200">
+                <span class="text-gray-900">Profile</span>
+            </a>
+
+            <a href="{{url_for('ocrdocupload')}}" class="flex items-center p-3 rounded hover:bg-gray-200">
+              <span class="text-gray-900">OCR</span>
+          </a>
+          </div>
+        </nav>
+
+        <a href="#" id="sidenav-close" title="Close Menu" aria-label="Close Menu"></a>
+      </aside>   
+      <main class="overflow-y-scroll h-screen">
+        <!-- Header -->
+        <header class="flex items-center justify-between p-4 sticky top-0 bg-white">
+          <div class="flex items-center justify-between">
+            <a
+              href="#sidenav-open"
+              class="visible sm:hidden"
+              title="Open Menu"
+              aria-label="Open Menu"
+            >
+            </a>
+            <h1 class="mx-2 text-xl font-bold text-gray-900">Your Documents</h1>
+          </div>
+        </header>
+
+        <section class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
+            <div
+              class="flex items-center border border-transparent rounded-3xl p-5 bg-white"
+            >
+              <img class="w-8 h-8 mr-3" src=".././static/assets/aadhar.png" alt="bitcoin">
+
+              <div>
+                <div class="">Aadhar Card</div>
+              </div>
+            </div>
+
+            <div
+              class="flex items-center border border-transparent rounded-3xl p-5 bg-white"
+            >
+              <img class="w-8 h-8 mr-3" src=".././static/assets/pan.png" alt="bitcoin">
+
+              <div>
+                <div class="">Pan Card</div>
+              </div>
+            </div>
+
+            <div
+              class="flex items-center border border-transparent rounded-3xl p-5 bg-white"
+            >
+              <img class="w-8 h-8 mr-3" src=".././static/assets/aadhar.png" alt="bitcoin">
+
+              <div>
+                <div class="">Aadhar Card</div>
+              </div>
+            </div>
+
+            <div
+              class="flex items-center border border-transparent rounded-3xl p-5 bg-white"
+            >
+              <img class="w-8 h-8 mr-3" src=".././static/assets/pan.png" alt="bitcoin">
+
+              <div>
+                <div class="">Pan Card</div>
+              </div>
+            </div>
+            <div
+              class="flex items-center border border-transparent rounded-3xl p-5 bg-white"
+            >
+              <img class="w-8 h-8 mr-3" src=".././static/assets/aadhar.png" alt="bitcoin">
+
+              <div>
+                <div class="">Aadhar Card</div>
+              </div>
+            </div>
+
+            <div
+              class="flex items-center border border-transparent rounded-3xl p-5 bg-white"
+            >
+              <img class="w-8 h-8 mr-3" src=".././static/assets/pan.png" alt="bitcoin">
+
+              <div>
+                <div class="">Pan Card</div>
+              </div>
+            </div>
+        
+          </section>
+
+
+        </div>
+    
+    
+      </section>
+    </main>
+    
+
+
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
